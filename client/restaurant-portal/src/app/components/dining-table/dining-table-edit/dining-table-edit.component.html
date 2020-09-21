@@ -1,0 +1,30 @@
+<h4>DiningTables Create</h4>
+<hr>
+<form [formGroup]="diningTableForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-md-3 col-md-offset-2">
+            <div class="form-group">
+                <label for="numDiner">Number Diners</label>
+                <input type="text" class="form-control" formControlName="numDiners" placeholder="Number Diners" required>
+            </div>
+        </div>
+        <div class="col-md-3 ">
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" class="form-control" formControlName="location" placeholder="Location" required>
+            </div>
+        </div>
+    </div> 
+    <div class="row">
+        <div class="col-md-6 col-md-offset-2">
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 col-md-offset-2">
+            <button class="btn btn-primary">Update</button> &nbsp;
+            <button class="btn btn-danger" (click)="onCancel()">Cancel</button>
+        </div>
+    </div> 
+</form>
+

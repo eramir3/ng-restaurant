@@ -1,0 +1,44 @@
+<h4>Billed Per Waiter List</h4>
+<hr>
+<div class="table-responsive" style="margin-top: 30px;">
+    <table class="table bordered highlight">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Total Billed</th>
+                <th>January</th>
+                <th>Febraury</th>
+                <th>March</th>
+                <th>April</th>
+                <th>May</th>
+                <th>June</th>
+                <th>July</th>
+                <th>August</th>
+                <th>September</th>
+                <th>October</th>
+                <th>November</th>
+                <th>December</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let waiter of billedPerWaiter">                
+                <td>{{ waiter.firstName }}</td>
+                <td>{{ waiter.lastName }}</td>
+                <td>{{ waiter.totalBilled }}</td>
+                <td>{{ waiter.january }}</td>
+                <td>{{ waiter.february }}</td>
+                <td>{{ waiter.march }}</td>
+                <td>{{ waiter.april }}</td>
+                <td>{{ waiter.may }}</td>
+                <td>{{ waiter.june }}</td>
+                <td>{{ waiter.july }}</td>
+                <td>{{ waiter.august }}</td>
+                <td>{{ waiter.september }}</td>
+                <td>{{ waiter.october }}</td>
+                <td>{{ waiter.november }}</td>
+                <td>{{ waiter.december }}</td>                
+            </tr>
+        </tbody>
+    </table>
+</div>

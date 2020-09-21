@@ -1,0 +1,56 @@
+<h4>Dining Tables List</h4>
+<hr>
+<div class="row">
+    <div class="col-md-12">
+        <a class="btn btn-primary" (click)="createDiningTableView()">Create Dining Table</a>
+    </div>
+</div>
+<div class="table-responsive" style="margin-top: 30px;">
+    <table class="table bordered highlight">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Number Diners</th>
+                <th>Locations</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let diningTable of diningTables; let i = index">                
+                <td>{{ diningTable.id }}</td>
+                <td>{{ diningTable.numDiners }}</td>
+                <td>{{ diningTable.location }}</td>
+                <td><button type="button" class="btn btn-primary btn-sm" (click)="editDiningTableView(diningTable)">Update</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm" [appModal]="rsvpModal" (click)="setDiningTableForDelete(i, diningTable)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" #rsvpModal role="dialog" aria-labelledby="niviteRsvpModalTitle">
+    <div class="modal-backdrop fade in" [ngStyle]="{zIndex:-1}" [appModal]="rsvpModal"></div>
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" [appModal]="rsvpModal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="niviteRsvpModalTitle">
+                    Confirm Deleting
+                </h4>                
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger bg-white text-dark" [appModal]="rsvpModal" (click)="removeSelectedDiningTable()">Yes</button>
+                <button type="button" class="btn btn-primary bg-white text-dark" [appModal]="rsvpModal">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,58 @@
+<h4>Cooks List</h4>
+<hr>
+<div class="row">
+    <div class="col-md-12">
+        <a class="btn btn-primary" (click)="createCookView()">Create Cook</a>
+    </div>
+</div>
+<div class="table-responsive" style="margin-top: 30px;">
+    <table class="table bordered highlight">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Birth Date</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cook of cooks; let i = index">                
+                <td>{{ cook.id }}</td>
+                <td>{{ cook.firstName }}</td>
+                <td>{{ cook.lastName }}</td>
+                <td>{{ cook.birthDate | date:'longDate' }}</td>
+                <td><button type="button" class="btn btn-primary btn-sm" (click)="editCookView(cook)">Update</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm" [appModal]="rsvpModal" (click)="setCookForDelete(i, cook)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" #rsvpModal role="dialog" aria-labelledby="niviteRsvpModalTitle">
+    <div class="modal-backdrop fade in" [ngStyle]="{zIndex:-1}" [appModal]="rsvpModal"></div>
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" [appModal]="rsvpModal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="niviteRsvpModalTitle">
+                    Confirm Deleting
+                </h4>                
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger bg-white text-dark" [appModal]="rsvpModal" (click)="removeSelectedCook()">Yes</button>
+                <button type="button" class="btn btn-primary bg-white text-dark" [appModal]="rsvpModal">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

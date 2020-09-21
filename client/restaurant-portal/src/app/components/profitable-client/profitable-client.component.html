@@ -1,0 +1,20 @@
+<h4>Waiters List</h4>
+<hr>
+<div class="table-responsive" style="margin-top: 30px;">
+    <table class="table bordered highlight">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Amount Spent</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let client of profitableClients">                
+                <td>{{ client.firstName }}</td>
+                <td>{{ client.lastName }}</td>
+                <td>{{ client.totalPrice }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

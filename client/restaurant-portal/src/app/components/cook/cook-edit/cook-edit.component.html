@@ -1,0 +1,45 @@
+<h4>Cooks Edit</h4>
+<hr>
+<form [formGroup]="cookForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-md-3 col-md-offset-2">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" formControlName="firstName" placeholder="First Name" required>
+            </div>
+        </div>
+        <div class="col-md-3 ">
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" formControlName="lastName" placeholder="Last Name" required>
+            </div>
+        </div>
+    </div> 
+    <div class="row">
+        <div class="col-md-3 col-md-offset-2">
+            <div class="form-group">
+                <label for="birtDate">Birth Date</label>
+                <!-- <input type="date" class="form-control" [ngModel]="newCook.birthDate | date:'MM-dd-yyyy'" (ngModelChange)="newCook.birthDate=$event" name="birtDate" placeholder="Birth Date" required> -->
+                <input type="text" bsDatepicker [bsConfig]="{ dateInputFormat: 'MM-DD-YYYY' }"  autocomplete="off" class="form-control" formControlName="birthDate" name="birtDate" placeholder="Birth Date" required>
+            </div>
+        </div>
+        <div class="col-md-3 ">
+            <div class="form-group">
+                <label for="remarks">Remarks</label>
+                <textarea class="form-control" formControlName="remarks" required></textarea>
+            </div>
+        </div>
+    </div> 
+    <div class="row">
+        <div class="col-md-6 col-md-offset-2">
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 col-md-offset-2">
+            <button class="btn btn-primary">Update</button> &nbsp;
+            <button class="btn btn-danger" (click)="onCancel()">Cancel</button>
+        </div>
+    </div> 
+</form>
+

@@ -1,0 +1,38 @@
+<h4>Clients Create</h4>
+<hr>
+<form (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-md-3 col-md-offset-2">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" [(ngModel)]="newClient.firstName" name="firstName" placeholder="First Name" required>
+            </div>
+        </div>
+        <div class="col-md-3 ">
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" [(ngModel)]="newClient.lastName" name="lastName" placeholder="Last Name" required>
+            </div>
+        </div>
+    </div> 
+    <div class="row">
+        <div class="col-md-6 col-md-offset-2">
+            <div class="form-group">
+                <label for="remarks">Remarks</label>
+                <textarea class="form-control" name="remarks" [(ngModel)]="newClient.remarks" required></textarea>
+            </div>
+        </div>
+    </div> 
+    <div class="row">
+        <div class="col-md-6 col-md-offset-2">
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 col-md-offset-2">
+            <button class="btn btn-primary">Save</button> &nbsp;
+            <button class="btn btn-danger" (click)="onCancel()">Cancel</button>
+        </div>
+    </div> 
+</form>
+

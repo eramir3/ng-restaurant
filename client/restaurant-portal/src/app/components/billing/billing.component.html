@@ -1,0 +1,96 @@
+<h4>Register Bill</h4>
+<hr>
+<form id="facturaForm">
+
+    <!-- Billing Info -->
+    <div class="row">
+
+        <!-- Date -->
+        <div class="col-md-6">
+            <div class="thumbnail" style="padding: 20px">
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <h4>Date</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <input type="date" name="date" class="form-control" placeholder="Date" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table -->
+        <div class="col-md-6 ">
+            <div class="thumbnail" style="padding: 20px">
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <h4>Dining Table</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <!-- (ngModelChange)="onWaiterChanged()" -->
+                        <select class="form-control" 
+                                [(ngModel)]="selectedTable"
+                                name="table">
+                                <option *ngFor="let table of tables"
+                                    [ngValue]="table">{{ table.location }}
+                                </option>    
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <!-- Waiter -->
+        <div class="col-md-6 ">
+            <div class="thumbnail" style="padding: 20px">
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <h4>Waiter</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <!-- (ngModelChange)="onWaiterChanged()" -->
+                        <select class="form-control" 
+                                [(ngModel)]="selectedWaiter"
+                                name="waiter">
+                                <option *ngFor="let waiter of waiters"
+                                    [ngValue]="waiter">{{ waiter.firstName }} {{ waiter.lastName }}
+                                </option>    
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cook -->
+        <div class="col-md-6 ">
+            <div class="thumbnail" style="padding: 20px">
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <h4>Cook</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <!-- (ngModelChange)="onWaiterChanged()" -->
+                        <select class="form-control" 
+                                [(ngModel)]="selectedCook"
+                                name="cook">
+                                <option *ngFor="let cook of cooks"
+                                    [ngValue]="cook">{{ cook.firstName }} {{ cook.lastName }}
+                                </option>    
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
